@@ -1,0 +1,306 @@
+html:     <div class="scroll-container">
+    <div class="scroll-content">
+        <div class="service">
+            <img src="img1.jpg" alt="Esmalte">
+            <h3>Esmalte Semipermanente (Gel)</h3>
+            <p>¡Brillo espectacular por más de 15 días!</p>
+            <button>Ver Más</button>
+        </div>
+        <div class="service">
+            <img src="img2.jpg" alt="Manicure">
+            <h3>Manicure</h3>
+            <p>¡Tus manos dicen mucho de ti! Cuídalas.</p>
+            <button>Ver Más</button>
+        </div>
+        <div class="service">
+            <img src="img3.jpg" alt="Pedicure">
+            <h3>Pedicure</h3>
+            <p>¡Luce unos pies lindos!</p>
+            <button>Ver Más</button>
+        </div>
+        <!-- Agregar más elementos según necesites -->
+    </div>
+</div>
+
+
+css:
+.scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-content {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.service {
+    min-width: 250px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    scroll-snap-align: center;
+}
+
+.service img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+app.js: 
+document.querySelector('.scroll-container').addEventListener('wheel', (event) => {
+    event.preventDefault();
+    document.querySelector('.scroll-container').scrollBy({
+        left: event.deltaY < 0 ? -100 : 100,
+        behavior: 'smooth'
+    });
+});
+
+
+
+
+
+IA:
+
+puedes hacerme lo mismo que esta pagina en sus targetitas y asta abajo creo que es donde hay muchas imagenes pero solo en una imagen puedes deslisarlo para que te muestre las demas, quiero que las tarjetitas donde dicen: ESMALTE SEMIPERMANENTE (GEL), MANICURE, PEDICURE, PESTAÑAS y todas las demas tenga una animacion a la hora de pasar con el maus en cada tarjetita tambien en el boton en ver mas 
+
+
+
+puedes hacerme lo mismo que esta pagina en sus targetitas y asta abajo creo que es donde hay muchas imagenes pero solo en una imagen puedes deslisarlo para que te muestre las demas, quiero que las tarjetitas donde dicen: ESMALTE SEMIPERMANENTE (GEL), MANICURE, PEDICURE, PESTAÑAS y todas las demas tenga una animacion a la hora de pasar con el maus en cada tarjetita tambien en el boton en ver mas 
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UÑAS YAMILI</title>
+    <link rel="stylesheet" href="../STATIC/stiles.css">
+    <link rel="icon" href="../IMG/LOGO 2.png" type="image/x-icon">
+    <script src="../STATIC/app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../IMG/LOGO 2.png" alt="Logo Uñas Yamili">
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-button">Inicio</a></li>
+                <li><a href="#" class="nav-button">Servicios</a></li>
+                <li><a href="#" class="nav-button">Galería</a></li>
+                <li><a href="#" class="nav-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="background-image" ></div>
+        <section class="hero">
+            <h1>Bienvenida a Uñas Yamili</h1>
+            <p>Descubre el arte en tus manos</p>
+            <a href="#" class="cta-button">Reserva tu cita</a>
+        </section>
+    </main>
+
+
+
+
+
+        <footer>
+        <p>&copy; 2025 Uñas Yamili. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+CSS:
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #f8e1e4;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 1rem;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../IMG/Mano\ con\ rosas.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ff69b4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #f8e1e4;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #f8e1e4;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+
+APP.JS:
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+});
+
+
+

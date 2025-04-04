@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            scroll-behavior: smooth;
+        }
+
+        header {
+    background-color: #ff69b4;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .go-to-page {
+    background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .go-to-page:hover {
+            background-color: #ffffff41;
+            transform: scale(1.1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: scale(0.95);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-item h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover h3 {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Galería de Fotos</h1>
+        <!-- Botón de redirección al lado del encabezado -->
+        <a href="../TEMPLATE/index.html"><button class="go-to-page" onclick="">
+            Ir al inicio
+        </button></a>
+    </header>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/5b/9a/f0/5b9af01dfcfb8f6dd890782efda4cb21.jpg" alt="Foto 1">
+            <h3>Foto 1</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/5b/9a/f0/5b9af01dfcfb8f6dd890782efda4cb21.jpg" alt="Foto 2">
+            <h3>Foto 2</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/5b/9a/f0/5b9af01dfcfb8f6dd890782efda4cb21.jpg" alt="Foto 3">
+            <h3>Foto 3</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/5b/9a/f0/5b9af01dfcfb8f6dd890782efda4cb21.jpg" alt="Foto 4">
+            <h3>Foto 4</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/5b/9a/f0/5b9af01dfcfb8f6dd890782efda4cb21.jpg" alt="Foto 5">
+            <h3>Foto 5</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/736x/5b/9a/f0/5b9af01dfcfb8f6dd890782efda4cb21.jpg" alt="Foto 6">
+            <h3>Foto 6</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
